@@ -140,7 +140,7 @@ export default function ProtectedLabelsSettings({
                     }
                   }}
                 >
-                  <XIcon className="h-3 w-3" />
+                  <XIcon />
                 </Button>
               )}
             </StatusBadge>
@@ -170,7 +170,7 @@ export default function ProtectedLabelsSettings({
                           disabled={!hasAccess || !hasEntitlement}
                         >
                           {field.value || "Select or enter a label"}
-                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          <ChevronsUpDown className="ml-2 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
@@ -195,7 +195,7 @@ export default function ProtectedLabelsSettings({
                             >
                               <Check
                                 className={cn(
-                                  "mr-2 h-4 w-4",
+                                  "icon-base mr-2",
                                   field.value === label
                                     ? "opacity-100"
                                     : "opacity-0",

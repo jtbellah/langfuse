@@ -751,7 +751,7 @@ export const MonitorForm = ({
                   <AccordionPrimitive.Item value="advanced">
                     <AccordionPrimitive.Header className="flex">
                       <AccordionPrimitive.Trigger className="flex flex-1 items-center justify-start gap-2 py-2 text-sm font-bold transition-all hover:underline [&>svg]:order-first [&>svg]:-rotate-90 [&[data-state=open]>svg]:rotate-0">
-                        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+                        <ChevronDown className="icon-base shrink-0 transition-transform duration-200" />
                         Advanced Options
                       </AccordionPrimitive.Trigger>
                     </AccordionPrimitive.Header>
@@ -854,7 +854,7 @@ export const MonitorForm = ({
                               size="sm"
                               className="gap-1"
                             >
-                              <Plus className="h-3 w-3" />
+                              <Plus />
                               Add tag
                             </Button>
                           }
@@ -943,7 +943,7 @@ const Header = ({
           {step}
         </span>
       ) : null}
-      {Icon ? <Icon className="h-5 w-5" aria-hidden="true" /> : null}
+      {Icon ? <Icon className="icon-lg" aria-hidden="true" /> : null}
       {title}
     </h3>
   </div>

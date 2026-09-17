@@ -170,7 +170,7 @@ export function AnnotationQueueFormDialogContent({
                           if (event.button === 1) onManageScoreConfigsClick();
                         }}
                       >
-                        <Settings2 className="size-3" aria-hidden="true" />
+                        <Settings2 aria-hidden="true" />
                         Manage score configs
                       </Link>
                     </Button>
@@ -233,9 +233,9 @@ export function AnnotationQueueFormDialogContent({
                         >
                           <div className="flex items-center gap-2">
                             {isAdvancedOpen ? (
-                              <ChevronDown className="text-muted-foreground h-4 w-4" />
+                              <ChevronDown className="text-muted-foreground" />
                             ) : (
-                              <ChevronRight className="text-muted-foreground h-4 w-4" />
+                              <ChevronRight className="text-muted-foreground" />
                             )}
                             <span className="text-sm font-bold">
                               User Assignment

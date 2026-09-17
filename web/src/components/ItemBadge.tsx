@@ -65,7 +65,7 @@ const iconMap = {
   EXPERIMENT: FlaskConical,
 } as const;
 
-const iconVariants = cva("h-4 w-4", {
+const iconVariants = cva("icon-base", {
   variants: {
     type: {
       TRACE: "text-observation-trace",
@@ -109,9 +109,7 @@ export function renderFilterIcon(value: string): React.ReactNode {
   const type = value as LangfuseItemType;
   const Icon = iconMap[type];
   if (!Icon) return null;
-  return (
-    <Icon className={cn("h-3.5 w-3.5 shrink-0", iconVariants({ type }))} />
-  );
+  return <Icon className={cn("icon-base shrink-0", iconVariants({ type }))} />;
 }
 
 /**

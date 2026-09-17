@@ -64,7 +64,7 @@ function LevelDescriptionTooltip({
         className="text-muted-foreground focus-visible:ring-ring cursor-help rounded-sm focus-visible:ring-2 focus-visible:outline-none"
         aria-label={`Level ${index} description`}
       >
-        <InfoIcon className="h-3.5 w-3.5" aria-hidden="true" />
+        <InfoIcon className="icon-base" aria-hidden="true" />
       </TooltipTrigger>
       <TooltipContent className="max-w-xs">{description}</TooltipContent>
     </Tooltip>

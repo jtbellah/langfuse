@@ -54,7 +54,7 @@ export function ProjectNotificationChannelsList({
                 {channel.action.type === "SLACK" ? (
                   <SiSlack className="h-4 w-4 shrink-0" />
                 ) : (
-                  <Webhook className="h-4 w-4 shrink-0" />
+                  <Webhook className="icon-base shrink-0" />
                 )}
                 <span
                   className="truncate text-sm font-bold"
@@ -70,7 +70,7 @@ export function ProjectNotificationChannelsList({
                   onClick={() => onEdit(channel)}
                   title="Edit channel"
                 >
-                  <Pencil className="h-4 w-4" />
+                  <Pencil />
                 </Button>
                 <Button
                   variant="ghost"
@@ -79,7 +79,7 @@ export function ProjectNotificationChannelsList({
                   onClick={() => onDelete(channel.id)}
                   title="Delete channel"
                 >
-                  <Trash2 className="h-4 w-4" />
+                  <Trash2 />
                 </Button>
               </div>
             </div>
@@ -91,7 +91,7 @@ export function ProjectNotificationChannelsList({
       {!isLoading && !channels?.length && (
         <div>
           <Button variant="secondary" onClick={onAdd}>
-            <Plus className="mr-2 h-4 w-4" />
+            <Plus className="mr-2" />
             Add channel
           </Button>
         </div>

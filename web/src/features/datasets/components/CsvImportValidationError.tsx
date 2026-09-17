@@ -41,9 +41,9 @@ export const CsvImportValidationError: React.FC<
               className="h-auto p-0 text-sm font-bold hover:bg-transparent"
             >
               {isExpanded ? (
-                <ChevronDown className="mr-1 h-4 w-4" />
+                <ChevronDown className="mr-1" />
               ) : (
-                <ChevronRight className="mr-1 h-4 w-4" />
+                <ChevronRight className="mr-1" />
               )}
               {isExpanded ? "Hide" : "Show"} error details
             </Button>

@@ -48,14 +48,14 @@ const DropdownMenuSubTrigger = React.forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "focus:bg-accent data-[state=open]:bg-accent flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-disabled:cursor-not-allowed",
+      "focus:bg-accent data-[state=open]:bg-accent [&_svg:not([class*='icon-'])]:icon-base [&:not(.text-destructive)_svg:not([class*='text-'])]:text-icon-foreground flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-disabled:cursor-not-allowed",
       inset && "pl-8",
       className,
     )}
     {...props}
   >
     {children}
-    {!hasCustomIcon && <ChevronRight className="ml-auto h-4 w-4" />}
+    {!hasCustomIcon && <ChevronRight className="ml-auto" />}
   </DropdownMenuPrimitive.SubTrigger>
 ));
 DropdownMenuSubTrigger.displayName =
@@ -319,7 +319,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "focus:bg-accent focus:text-accent-foreground relative flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors select-none data-disabled:cursor-not-allowed data-disabled:opacity-50",
+      "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='icon-'])]:icon-base [&:not(.text-destructive)_svg:not([class*='text-'])]:text-icon-foreground relative flex cursor-pointer items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors select-none data-disabled:cursor-not-allowed data-disabled:opacity-50",
       !allowPointerEventsWhenDisabled && "data-disabled:pointer-events-none",
       inset && "pl-8",
       className,
@@ -382,7 +382,7 @@ const DropdownMenuItemWithSecondaryAction = (
   const primaryContent = (
     <>
       {PrimaryActionIcon && (
-        <PrimaryActionIcon className="mr-1.5 size-4" aria-hidden="true" />
+        <PrimaryActionIcon className="mr-1.5" aria-hidden="true" />
       )}
       <span
         className="min-w-0 flex-1 overflow-hidden text-left text-ellipsis whitespace-nowrap"
@@ -426,7 +426,7 @@ const DropdownMenuItemWithSecondaryAction = (
             }
           }}
         >
-          <SecondaryActionIcon size={12} />
+          <SecondaryActionIcon className="icon-sm" />
         </Link>
       );
     } else {
@@ -442,7 +442,7 @@ const DropdownMenuItemWithSecondaryAction = (
             secondaryAction.onClick();
           }}
         >
-          <SecondaryActionIcon size={12} />
+          <SecondaryActionIcon className="icon-sm" />
         </button>
       );
     }
@@ -521,7 +521,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "focus:bg-accent focus:text-accent-foreground relative flex cursor-pointer items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50",
+      "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='icon-'])]:icon-base [&:not(.text-destructive)_svg:not([class*='text-'])]:text-icon-foreground relative flex cursor-pointer items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50",
       className,
     )}
     checked={checked}
@@ -529,8 +529,8 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        {checked === "indeterminate" && <Minus className="h-4 w-4" />}
-        {checked === true && <Check className="h-4 w-4" />}
+        {checked === "indeterminate" && <Minus />}
+        {checked === true && <Check />}
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}
@@ -546,14 +546,14 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "focus:bg-accent focus:text-accent-foreground relative flex cursor-pointer items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50",
+      "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='icon-'])]:icon-base [&:not(.text-destructive)_svg:not([class*='text-'])]:text-icon-foreground relative flex cursor-pointer items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden transition-colors select-none data-disabled:pointer-events-none data-disabled:opacity-50",
       className,
     )}
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <Circle className="h-2 w-2 fill-current" />
+        <Circle className="fill-current" />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}

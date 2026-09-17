@@ -437,6 +437,21 @@ export default [
     files: ["src/**/*.{ts,tsx}"],
     rules: {
       "@repo/no-raw-font-weight": "error",
+      // Illustration icons at 40px and above keep raw sizes; decision deferred.
+      "@repo/no-raw-icon-size": [
+        "error",
+        {
+          exceptions: [
+            "src/components/error-page.tsx",
+            "src/features/batch-actions/components/AddObservationsToDatasetDialog/StatusStep.tsx",
+            "src/features/chart-view/components/ChartCanvas.tsx",
+            "src/features/chart-view/components/ChartViewPanel.tsx",
+            "src/features/scores-chart-view/components/ScoreChartViewPanel/ScoreChartViewPanel.tsx",
+            "src/features/scores/ScoresAnalyticsPage.tsx",
+            "src/features/widgets/chart-library/Chart.tsx",
+          ],
+        },
+      ],
       "@repo/no-arbitrary-colors": "error",
     },
   },

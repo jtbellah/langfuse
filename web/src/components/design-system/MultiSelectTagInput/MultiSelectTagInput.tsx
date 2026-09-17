@@ -258,7 +258,7 @@ export function MultiSelectTagInput<V extends string>({
                           removeValue(option.value);
                         }}
                       >
-                        <X className="size-3.5" />
+                        <X className="icon-base" />
                       </button>
                     </span>
                   ))
@@ -278,7 +278,7 @@ export function MultiSelectTagInput<V extends string>({
               {value.length === 0 && (
                 <ChevronDown
                   aria-hidden="true"
-                  className="size-4 shrink-0 opacity-50"
+                  className="icon-base shrink-0 opacity-50"
                 />
               )}
               {value.length > 0 && (
@@ -298,7 +298,7 @@ export function MultiSelectTagInput<V extends string>({
                     changeValue([]);
                   }}
                 >
-                  <X className="size-4" />
+                  <X className="icon-base" />
                 </button>
               )}
             </div>

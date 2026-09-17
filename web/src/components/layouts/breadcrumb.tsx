@@ -65,7 +65,7 @@ const BreadcrumbComponent = ({
                       {planLabels[organization.plan]}
                     </Badge>
                   )}
-                <ChevronDownIcon className="text-foreground-tertiary size-3 translate-y-px" />
+                <ChevronDownIcon className="text-foreground-tertiary icon-sm translate-y-px" />
               </button>
             )}
           </OrganizationDropdownMenu>
@@ -95,7 +95,7 @@ const BreadcrumbComponent = ({
                   {...getTriggerProps()}
                 >
                   {project.name}
-                  <ChevronDownIcon className="text-foreground-tertiary size-3 translate-y-px" />
+                  <ChevronDownIcon className="text-foreground-tertiary icon-sm translate-y-px" />
                 </button>
               )}
             </ProjectDropdownMenu>

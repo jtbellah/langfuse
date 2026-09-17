@@ -105,9 +105,9 @@ export function ExperimentGridSummaryValues({
             className="text-muted-foreground hover:text-foreground focus-visible:ring-ring flex h-6 items-center gap-1 rounded text-left text-[10px] font-normal focus-visible:ring-2 focus-visible:outline-none"
           >
             {expanded ? (
-              <ChevronDown className="size-3" />
+              <ChevronDown className="icon-sm" />
             ) : (
-              <ChevronRight className="size-3" />
+              <ChevronRight className="icon-sm" />
             )}
             SUMMARY · this page ({rows.length} items)
           </button>

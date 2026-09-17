@@ -294,7 +294,7 @@ export function PopoverFilterBuilder({
                   {filterState.length}
                 </span>
               ) : (
-                <ChevronDown className="ml-1 h-4 w-4 opacity-50" />
+                <ChevronDown className="ml-1 opacity-50" />
               )}
             </Button>
           ) : (
@@ -304,7 +304,7 @@ export function PopoverFilterBuilder({
               variant="ghost"
               className="relative"
             >
-              <FilterIcon className="h-4 w-4" />
+              <FilterIcon />
               {filterState.length > 0 && (
                 <span className="bg-input absolute top-0 -right-1 flex h-4 min-w-4 items-center justify-center rounded-sm px-1 text-xs shadow-xs">
                   {filterState.length}
@@ -338,7 +338,7 @@ export function PopoverFilterBuilder({
                 size="icon"
                 className="ml-0.5"
               >
-                <X className="h-4 w-4" />
+                <X />
               </Button>
             </TooltipTrigger>
             <TooltipContent>Clear all filters</TooltipContent>
@@ -353,7 +353,7 @@ export function PopoverFilterBuilder({
                 size="icon-xs"
                 className="hover:bg-background ml-0.5"
               >
-                <X className="h-3 w-3" />
+                <X />
               </Button>
             </TooltipTrigger>
             <TooltipContent>Clear all filters</TooltipContent>
@@ -716,7 +716,7 @@ function FilterBuilderForm({
             <span className="min-w-0 truncate" title={columnLabel}>
               {columnLabel}
             </span>
-            <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
+            <ChevronDown className="shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
         <PopoverContent align="start" className="max-w-fit p-0">
@@ -767,7 +767,7 @@ function FilterBuilderForm({
                     >
                       <Check
                         className={cn(
-                          "mr-2 h-4 w-4",
+                          "icon-base mr-2",
                           option.id === column?.id ? "visible" : "invisible",
                         )}
                       />
@@ -777,7 +777,7 @@ function FilterBuilderForm({
                           <TooltipTrigger asChild>
                             <Info
                               className={cn(
-                                "ml-2 h-4 w-4",
+                                "icon-base ml-2",
                                 alertStyles.iconColor,
                               )}
                             />
@@ -1123,7 +1123,7 @@ function FilterBuilderForm({
         disabled={disabled}
         size="xs"
       >
-        <X className="h-4 w-4" />
+        <X />
       </Button>
     );
 
@@ -1195,11 +1195,11 @@ function FilterBuilderForm({
             }
             className="text-muted-foreground w-full justify-start"
           >
-            <WandSparkles className="mr-2 h-4 w-4" />
+            <WandSparkles className="mr-2" />
             {!aiFilter.aiFeaturesEnabled ? (
               <>
                 AI Filters: Enable in Organization Settings (Admin Only)
-                <ExternalLink className="ml-2 h-4 w-4" />
+                <ExternalLink className="ml-2" />
               </>
             ) : showAiFilter ? (
               "Cancel"
@@ -1236,7 +1236,7 @@ function FilterBuilderForm({
                 </Button>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Info className="text-muted-foreground h-4 w-4" />
+                    <Info className="text-muted-foreground icon-base" />
                   </TooltipTrigger>
                   <TooltipContent>
                     <p className="text-xs">
@@ -1279,12 +1279,7 @@ function FilterBuilderForm({
               variant={subtleAddButton ? "ghost" : "outline"}
               size="sm"
             >
-              <Plus
-                className={cn(
-                  "shrink-0",
-                  subtleAddButton ? "h-3.5 w-3.5" : "mr-2 h-4 w-4",
-                )}
-              />
+              <Plus className={cn("shrink-0", !subtleAddButton && "mr-2")} />
               Add filter
             </Button>
           ) : null}

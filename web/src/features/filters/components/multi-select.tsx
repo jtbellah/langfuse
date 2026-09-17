@@ -191,12 +191,12 @@ export function MultiSelect({
               <div className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden">
                 {selectedBadges}
               </div>
-              <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
+              <ChevronDown className="shrink-0 opacity-50" />
             </>
           ) : (
             <>
               {label ?? "Select"}
-              <ChevronDown className="h-4 w-4 shrink-0 opacity-50" />
+              <ChevronDown className="shrink-0 opacity-50" />
               {selectedValues.size > 0 && (
                 <>
                   <Separator orientation="vertical" className="mr-auto h-4" />
@@ -228,7 +228,10 @@ export function MultiSelect({
                 role="status"
                 className="text-muted-foreground flex items-center gap-2 px-3 py-2 text-sm"
               >
-                <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                <Loader2
+                  className="icon-base animate-spin"
+                  aria-hidden="true"
+                />
                 Loading…
               </div>
             )}
@@ -252,7 +255,7 @@ export function MultiSelect({
                           : "opacity-50 [&_svg]:invisible",
                       )}
                     >
-                      <Check className="h-4 w-4" />
+                      <Check className="icon-base" />
                     </div>
                     <div className="font-bold">
                       {allSelectedState ? "Deselect All" : "Select All"}
@@ -293,7 +296,7 @@ export function MultiSelect({
                           : "opacity-50 [&_svg]:invisible",
                       )}
                     >
-                      <Check className="h-4 w-4" />
+                      <Check className="icon-base" />
                     </div>
                     <div
                       className={cn(
@@ -362,7 +365,7 @@ export function MultiSelect({
                         : "opacity-50 [&_svg]:invisible",
                     )}
                   >
-                    <Check className="h-4 w-4" />
+                    <Check className="icon-base" />
                   </div>
                   <Input
                     type="text"

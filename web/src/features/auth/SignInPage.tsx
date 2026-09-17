@@ -275,7 +275,7 @@ export function SSOButtons({
             )}
             {authProviders.onelogin && (
               <AuthProviderButton
-                icon={<Key className="mr-3" size={18} />}
+                icon={<Key className="icon-lg mr-3" />}
                 label="OneLogin"
                 onClick={() => handleSignIn("onelogin")}
                 loading={providerSigningIn === "onelogin"}
@@ -351,7 +351,7 @@ export function SSOButtons({
             {typeof authProviders.workos === "object" &&
               "connectionId" in authProviders.workos && (
                 <AuthProviderButton
-                  icon={<Code className="mr-3" size={18} />}
+                  icon={<Code className="icon-lg mr-3" />}
                   label="WorkOS"
                   onClick={() => {
                     capture("sign_in:button_click", { provider: "workos" });
@@ -371,7 +371,7 @@ export function SSOButtons({
             {typeof authProviders.workos === "object" &&
               "organizationId" in authProviders.workos && (
                 <AuthProviderButton
-                  icon={<Code className="mr-3" size={18} />}
+                  icon={<Code className="icon-lg mr-3" />}
                   label="WorkOS"
                   onClick={() => {
                     capture("sign_in:button_click", { provider: "workos" });
@@ -391,7 +391,7 @@ export function SSOButtons({
             {authProviders.workos === true && (
               <>
                 <AuthProviderButton
-                  icon={<Code className="mr-3" size={18} />}
+                  icon={<Code className="icon-lg mr-3" />}
                   label="WorkOS (organization)"
                   onClick={() => {
                     const organization = window.prompt(
@@ -411,7 +411,7 @@ export function SSOButtons({
                   }
                 />
                 <AuthProviderButton
-                  icon={<Code className="mr-3" size={18} />}
+                  icon={<Code className="icon-lg mr-3" />}
                   label="WorkOS (connection)"
                   onClick={() => {
                     const connection = window.prompt(

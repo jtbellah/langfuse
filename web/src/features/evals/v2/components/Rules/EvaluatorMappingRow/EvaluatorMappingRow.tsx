@@ -114,7 +114,7 @@ export const EvaluatorMappingRow = memo(function EvaluatorMappingRow({
                 className="min-w-0 flex-1 justify-start gap-2 px-0 hover:bg-transparent"
               >
                 <ChevronDown
-                  className={`text-muted-foreground h-4 w-4 shrink-0 transition-transform ${open ? "" : "-rotate-90"}`}
+                  className={`text-muted-foreground shrink-0 transition-transform ${open ? "" : "-rotate-90"}`}
                 />
                 <span className="flex min-w-0 items-baseline gap-2">
                   <span className="truncate" title={evaluatorName}>
@@ -126,7 +126,7 @@ export const EvaluatorMappingRow = memo(function EvaluatorMappingRow({
                       {allVariablesMapped ? (
                         <Check
                           aria-label="All variables mapped"
-                          className="text-dark-green h-3.5 w-3.5"
+                          className="text-dark-green"
                         />
                       ) : hasInvalidMappings ? (
                         <span
@@ -134,7 +134,7 @@ export const EvaluatorMappingRow = memo(function EvaluatorMappingRow({
                           title="Some variables are not mapped correctly"
                           className="text-dark-yellow h-3.5 w-3.5"
                         >
-                          <TriangleAlert className="h-3.5 w-3.5" aria-hidden />
+                          <TriangleAlert aria-hidden />
                         </span>
                       ) : null}
                     </span>
@@ -152,7 +152,7 @@ export const EvaluatorMappingRow = memo(function EvaluatorMappingRow({
             disabled={disabled}
             onClick={() => detachEvaluator(evaluatorId)}
           >
-            <Unlink className="h-3.5 w-3.5" />
+            <Unlink />
             Disconnect
           </Button>
         </div>

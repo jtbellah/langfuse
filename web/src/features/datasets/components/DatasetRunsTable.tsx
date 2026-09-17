@@ -126,7 +126,7 @@ const DatasetRunTableMultiSelectAction = ({
               onClick={() => capture("dataset_run:compare_view_click")}
             >
               Actions ({selectedRunIds.length} selected)
-              <ChevronDown className="h-5 w-5" />
+              <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent key="dropdown-menu-content">
@@ -138,12 +138,12 @@ const DatasetRunTableMultiSelectAction = ({
               }}
             >
               <DropdownMenuItem>
-                <Columns3 className="mr-2 h-4 w-4" />
+                <Columns3 className="mr-2" />
                 <span>Compare</span>
               </DropdownMenuItem>
             </Link>
             <DropdownMenuItem key="delete" onClick={openDialog}>
-              <Trash className="mr-2 h-4 w-4" />
+              <Trash className="mr-2" />
               <span>Delete</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -501,7 +501,7 @@ function DatasetRunsTableInternal(
               disabled={!hasDeleteAccess}
               onSelect={() => props.openDeleteDatasetRunDialog(id)}
             >
-              <Trash className="mr-2 h-4 w-4" />
+              <Trash className="mr-2" />
               Delete
             </DropdownMenuItem>
           </>

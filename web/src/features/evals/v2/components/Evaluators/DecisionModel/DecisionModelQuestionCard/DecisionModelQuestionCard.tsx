@@ -151,7 +151,7 @@ export function DecisionModelQuestionCard({
               onRemove ? "Remove question" : "At least one question is required"
             }
           >
-            <Trash2 className="h-3.5 w-3.5" />
+            <Trash2 />
           </Button>
         </span>
       }
