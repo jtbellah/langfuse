@@ -80,6 +80,7 @@ import {
   recordExportFreshnessLag,
   windowClassFromBlobFrequency,
 } from "../../services/exportFreshnessLagMetric";
+import { isExportCaughtUp } from "../../services/exportStalenessMetric";
 import {
   buildBlobExportManifest,
   buildBlobExportManifestKey,
@@ -1304,6 +1305,12 @@ export const handleBlobStorageIntegrationProjectJob = async (
         nextSyncAt: new Date(now.getTime() + frequencyIntervalMs),
         lastError: null,
         lastErrorAt: null,
+        ...(isExportCaughtUp({
+          lastSyncAt: blobStorageIntegration.lastSyncAt,
+          runStartTime,
+        })
+          ? { backfill: false }
+          : {}),
       },
     });
     recordExportFreshnessLag({
@@ -1543,6 +1550,9 @@ export const handleBlobStorageIntegrationProjectJob = async (
           lastError: null,
           lastErrorAt: null,
           runStartedAt: null,
+          ...(isExportCaughtUp({ lastSyncAt: maxTimestamp, runStartTime })
+            ? { backfill: false }
+            : {}),
         },
       },
     );

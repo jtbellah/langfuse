@@ -15,6 +15,7 @@ import { decrypt } from "@langfuse/shared/encryption";
 import { MixpanelClient } from "./mixpanelClient";
 import { recordExportVolume } from "../../services/exportVolumeMetric";
 import { recordExportFreshnessLag } from "../../services/exportFreshnessLagMetric";
+import { isExportCaughtUp } from "../../services/exportStalenessMetric";
 import {
   transformTraceForMixpanel,
   transformGenerationForMixpanel,
@@ -309,6 +310,12 @@ export const handleMixpanelIntegrationProjectJob = async (
       },
       data: {
         lastSyncAt: executionConfig.maxTimestamp,
+        ...(isExportCaughtUp({
+          lastSyncAt: executionConfig.maxTimestamp,
+          runStartTime,
+        })
+          ? { backfill: false }
+          : {}),
       },
     });
     // Record gzipped on-wire export volume once the run has succeeded.

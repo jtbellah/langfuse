@@ -29,6 +29,7 @@ import { decrypt } from "@langfuse/shared/encryption";
 import { PostHog } from "posthog-node";
 import { recordExportVolume } from "../../services/exportVolumeMetric";
 import { recordExportFreshnessLag } from "../../services/exportFreshnessLagMetric";
+import { isExportCaughtUp } from "../../services/exportStalenessMetric";
 import { assertExportSourceWritable } from "../exportWriteModeGuard";
 import { classifyCustomerFault } from "../integrations/customerFaultClassification";
 import { isRecordNotFoundError } from "../integrations/prismaErrors";
@@ -428,6 +429,12 @@ export const handlePostHogIntegrationProjectJob = async (
         lastSyncAt: executionConfig.maxTimestamp,
         lastError: null,
         lastErrorAt: null,
+        ...(isExportCaughtUp({
+          lastSyncAt: executionConfig.maxTimestamp,
+          runStartTime,
+        })
+          ? { backfill: false }
+          : {}),
       },
     });
     // Record gzipped on-wire export volume once the run has succeeded.
