@@ -292,7 +292,7 @@ function MobileNavSwitcher({
                     {organization.name}
                   </span>
                   <span className="ml-auto flex shrink-0">
-                    <ChevronDownIcon className="text-foreground-tertiary size-3" />
+                    <ChevronDownIcon className="text-foreground-tertiary size-3.5" />
                   </span>
                 </SidebarMenuButton>
               )}
@@ -323,7 +323,7 @@ function MobileNavSwitcher({
                       {project.name}
                     </span>
                     <span className="ml-auto flex shrink-0">
-                      <ChevronDownIcon className="text-foreground-tertiary size-3" />
+                      <ChevronDownIcon className="text-foreground-tertiary size-3.5" />
                     </span>
                   </SidebarMenuButton>
                 )}
