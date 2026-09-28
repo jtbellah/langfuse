@@ -292,7 +292,7 @@ function MobileNavSwitcher({
                   >
                     {organization.name}
                   </span>
-                  <ChevronDownIcon className="ml-auto h-4 w-4 shrink-0" />
+                  <ChevronDownIcon className="text-foreground-tertiary ml-auto size-3 shrink-0" />
                 </SidebarMenuButton>
               )}
             </OrganizationDropdownMenu>
@@ -321,7 +321,7 @@ function MobileNavSwitcher({
                     >
                       {project.name}
                     </span>
-                    <ChevronDownIcon className="ml-auto h-4 w-4 shrink-0" />
+                    <ChevronDownIcon className="text-foreground-tertiary ml-auto size-3 shrink-0" />
                   </SidebarMenuButton>
                 )}
               </ProjectDropdownMenu>
@@ -491,7 +491,7 @@ function NavUser({
                   {user.email}
                 </span>
               </div>
-              <ChevronsUpDown className="ml-auto size-4" />
+              <ChevronsUpDown className="text-foreground-tertiary ml-auto size-3" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
